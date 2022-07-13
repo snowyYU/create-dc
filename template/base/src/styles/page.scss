@@ -1,0 +1,29 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 68px);
+  margin: 16px;
+  margin-bottom: 0px;
+
+  &__line {
+    flex-shrink: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e1e3e6;
+  }
+
+  &__btn-group {
+    margin-top: 16px;
+  }
+
+  &__table {
+    flex-grow: 1;
+    margin-top: 16px;
+  }
+}
+
+.van-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
