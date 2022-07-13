@@ -2,7 +2,7 @@
  * @Author: jasper
  * @Date: 2022-07-08 15:48:40
  * @LastEditors: jasper
- * @LastEditTime: 2022-07-11 16:23:57
+ * @LastEditTime: 2022-07-13 20:18:25
  * @FilePath: /create-dc/index.ts
  * @Description:
  *
@@ -15,8 +15,12 @@ import { cwd } from "process";
 import minimist from "minimist";
 import prompts from "prompts";
 import { red, green, bold } from "kolorist";
+import renderTemplate from "./utils/renderTemplate";
 
 import { postOrderDirectoryTraverse, preOrderDirectoryTraverse } from "./utils/directoryTraverse";
+import generateReadme from "./utils/generateReadme";
+import getCommand from "./utils/getCommand";
+
 import banner from "./utils/banner";
 function isValidPackageName(projectName) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(projectName);
@@ -187,6 +191,43 @@ async function init() {
   // 写入 package.json
   const pkg = { name: packageName, version: "0.0.0" };
   fs.writeFileSync(path.resolve(root, "package.json"), JSON.stringify(pkg, null, 2));
+  // todo:
+  // work around the esbuild issue that `import.meta.url` cannot be correctly transpiled
+  // when bundling for node and the format is cjs
+  // const templateRoot = new URL('./template', import.meta.url).pathname
+  const templateRoot = path.resolve(__dirname, "template");
+  const render = function render(templateName) {
+    const templateDir = path.resolve(templateRoot, templateName);
+    renderTemplate(templateDir, root);
+  };
+
+  // Render base template
+  render("base");
+
+  // Instructions:
+  // Supported package managers: pnpm > yarn > npm
+  // Note: until <https://github.com/pnpm/pnpm/issues/3505> is resolved,
+  // it is not possible to tell if the command is called by `pnpm init`.
+  const userAgent = process.env.npm_config_user_agent ?? "";
+  const packageManager = /pnpm/.test(userAgent) ? "pnpm" : /yarn/.test(userAgent) ? "yarn" : "npm";
+
+  // README generation
+  fs.writeFileSync(
+    path.resolve(root, "README.md"),
+    generateReadme({
+      projectName: result.projectName ?? defaultProjectName,
+      packageManager,
+    })
+  );
+
+  console.log(`\nDone. Now run:\n`);
+  if (root !== cwd) {
+    console.log(`  ${bold(green(`cd ${path.relative(cwd, root)}`))}`);
+  }
+  console.log(`  ${bold(green(getCommand(packageManager, "install")))}`);
+  console.log(`  ${bold(green(getCommand(packageManager, "lint")))}`);
+  console.log(`  ${bold(green(getCommand(packageManager, "dev")))}`);
+  console.log();
 }
 
 init().catch((e) => {
