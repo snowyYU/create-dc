@@ -24,11 +24,6 @@ const EventManageRouter: Array<RouteRecordRaw> = [
     component: () => import("@/views/HomeView.vue"),
     meta: { title: "首页", icon: "" },
   },
-  {
-    path: "/loginView",
-    component: () => import("@/views/LoginView.vue"),
-    meta: { title: "登录页", icon: "", isModule: true },
-  },
 ];
 
 export default EventManageRouter;

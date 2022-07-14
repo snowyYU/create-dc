@@ -57,7 +57,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: `${config.domainSign}-view`,
     assetsDir: "static",
   },
 });

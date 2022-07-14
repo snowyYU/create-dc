@@ -12,14 +12,15 @@
 interface Config {
   //顶部导航菜单是否开启
   navMenuEnable: boolean;
-  loginPath:string;
+  loginPath: string;
+  domainSign: string;
 }
 
 const config: Config = {
   //顶部导航菜单是否开启
   navMenuEnable: true,
-  loginPath:"login"
-  
+  loginPath: "/portal-view",
+  domainSign: "template-v3",
 };
 
 export default config;

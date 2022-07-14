@@ -8,6 +8,7 @@
  *
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved.
  */
+import { toRaw } from "vue";
 import {
   createRouter,
   createWebHashHistory,
@@ -15,6 +16,8 @@ import {
 } from "vue-router";
 import registerRouterGuards from "./routerGuards";
 // import Layout from '@/layout/index.vue'
+import { useAppStore } from "@/stores/app";
+import config from "@/config";
 
 const constantFiles = import.meta.globEager("./constantModules/*.ts");
 let constantModules: Array<RouteRecordRaw> = [];
@@ -23,6 +26,12 @@ Object.keys(constantFiles).forEach((key) => {
   constantModules = constantModules.concat(constantFiles[key].default);
 });
 
+const asyncFiles = import.meta.globEager("./permissionModules/*.ts");
+let permissionModules: Array<RouteRecordRaw> = [];
+Object.keys(asyncFiles).forEach((key) => {
+  if (key === "./index.ts") return;
+  permissionModules = permissionModules.concat(asyncFiles[key].default);
+});
 
 const errorPageRoutes: Array<RouteRecordRaw> = [
   {
@@ -39,11 +48,14 @@ const errorPageRoutes: Array<RouteRecordRaw> = [
 
 const constantRoutes: Array<RouteRecordRaw> = [...constantModules];
 
+const asyncRoutes: Array<RouteRecordRaw> = [...permissionModules];
 const router = () => {
   // 此处会根据是否要对接管理系统，执行不同的逻辑
   const router = createRouter({
     history: createWebHashHistory(),
-    routes: [...constantRoutes, ...errorPageRoutes],
+    routes: config.enableSso
+      ? toRaw(useAppStore().finallyRoute)
+      : [...constantRoutes, ...errorPageRoutes],
   });
   registerRouterGuards(router);
   return router;
@@ -54,5 +66,5 @@ function resetRouter() {
   (router() as any).matcher = (newRouter as any).matcher; // reset router
 }
 
-export { constantRoutes, errorPageRoutes, resetRouter };
+export { constantRoutes, asyncRoutes, errorPageRoutes, resetRouter };
 export default router;
