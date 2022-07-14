@@ -9,15 +9,10 @@
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved.
  */
 import { toRaw } from "vue";
-import {
-  createRouter,
-  createWebHashHistory,
-  type RouteRecordRaw,
-} from "vue-router";
+import { createRouter, createWebHashHistory, type RouteRecordRaw } from "vue-router";
 import registerRouterGuards from "./routerGuards";
 // import Layout from '@/layout/index.vue'
 import { useAppStore } from "@/stores/app";
-import config from "@/config";
 
 const constantFiles = import.meta.globEager("./constantModules/*.ts");
 let constantModules: Array<RouteRecordRaw> = [];
@@ -53,9 +48,7 @@ const router = () => {
   // 此处会根据是否要对接管理系统，执行不同的逻辑
   const router = createRouter({
     history: createWebHashHistory(),
-    routes: config.enableSso
-      ? toRaw(useAppStore().finallyRoute)
-      : [...constantRoutes, ...errorPageRoutes],
+    routes: toRaw(useAppStore().finallyRoute),
   });
   registerRouterGuards(router);
   return router;

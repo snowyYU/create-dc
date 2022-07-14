@@ -13,9 +13,7 @@ import LayoutWithNav from "@/layout/LayoutWithNav.vue";
 import LayoutWithSidebar from "@/layout/LayoutWithSidebar.vue";
 import config from "@/config";
 
-const DemoRouter: Array<RouteRecordRaw> = config.enableSso
-  ? []
-  : [
+const DemoRouter: Array<RouteRecordRaw> = [
       // {
       //   path: '/test',
       //   name: 'Test',

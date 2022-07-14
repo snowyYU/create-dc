@@ -9,23 +9,18 @@
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved.
  */
 import { useAppStore } from "@/stores/app";
-import config from "@/config";
 const portal = {
   goLogin(): void {
     const appStore = useAppStore();
 
     // 返回单点登陆
-    window.location.href = config.enableSso
-      ? `${appStore.appInfo.loginUrl[0]}?callbackUrl=${window.location.href}`
-      : "/";
+    window.location.href = `${appStore.appInfo.loginUrl[0]}?callbackUrl=${window.location.href}`;
   },
   goLoginWithoutCallback(): void {
     const appStore = useAppStore();
 
     // 返回单点登陆
-    window.location.href = config.enableSso
-      ? `${appStore.appInfo.loginUrl[0]}`
-      : "/";
+    window.location.href = `${appStore.appInfo.loginUrl[0]}`;
   },
   loginout(needCallBack?: boolean): void {
     // 退出登陆

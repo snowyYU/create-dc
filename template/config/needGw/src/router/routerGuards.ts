@@ -14,22 +14,18 @@ import type { Router } from "vue-router";
 import { getToken } from "@/utils/cookies";
 
 import portal from "@/utils/gateway";
-import config from "@/config";
 NProgress.configure({ showSpinner: false });
 
 export default function registerRouterGuards(router: Router) {
   router.beforeEach(async (to, _, next: any) => {
     // Start progress bar
     NProgress.start();
-    if (!config.enableSso) {
+
+    if (getToken()) {
       next();
     } else {
-      if (getToken()) {
-        next();
-      } else {
-        portal.goLogin();
-        NProgress.done();
-      }
+      portal.goLogin();
+      NProgress.done();
     }
   });
 
