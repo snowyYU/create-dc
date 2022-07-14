@@ -8333,12 +8333,10 @@ async function init() {
 ${banner_default}
 `);
   const cwd = process.cwd();
-  console.log(`current working directory: ${cwd}`);
   const argv = (0, import_minimist.default)(process.argv.slice(2), {
     alias: { gateWay: ["gw", "needGw"] },
     boolean: true
   });
-  console.log(`arguments: ${JSON.stringify(argv, null, 2)}`);
   const isFeatureFlagsUsed = typeof (argv.default ?? argv.gw) === "boolean";
   let targetDir = argv._[0];
   const defaultProjectName = !targetDir ? "vue-project" : targetDir;
@@ -8349,7 +8347,7 @@ ${banner_default}
       {
         name: "projectName",
         type: targetDir ? null : "text",
-        message: "Project name:",
+        message: "\u9879\u76EE\u540D(Project name):",
         initial: defaultProjectName,
         onState: (state) => targetDir = String(state.value).trim() || defaultProjectName
       },
@@ -8357,15 +8355,15 @@ ${banner_default}
         name: "shouldOverwrite",
         type: () => canSafelyOverwrite(targetDir) || forceOverwrite ? null : "confirm",
         message: () => {
-          const dirForPrompt = targetDir === "." ? "Current directory" : `Target directory "${targetDir}"`;
-          return `${dirForPrompt} is not empty. Remove existing files and continue?`;
+          const dirForPrompt = targetDir === "." ? "\u5F53\u524D\u76EE\u5F55" : `\u76EE\u6807\u76EE\u5F55 "${targetDir}"`;
+          return `${dirForPrompt} \u975E\u7A7A\u3002\u662F\u5426\u6E05\u7A7A\u76EE\u5F55\u6587\u4EF6\u5E76\u7EE7\u7EED\uFF1F`;
         }
       },
       {
         name: "overwriteChecker",
         type: (prev, values) => {
           if (values.shouldOverwrite === false) {
-            throw new Error(red("\u2716") + " Operation cancelled");
+            throw new Error(red("\u2716") + " \u64CD\u4F5C\u5DF2\u53D6\u6D88");
           }
           return null;
         }
@@ -8416,6 +8414,12 @@ ${banner_default}
     renderTemplate_default(templateDir, root);
   };
   render("base");
+  if (needGw) {
+    render("config/needGw");
+    let configTemplate = fs3.readFileSync(path3.resolve(root, "src/config/index.ts"), "utf8");
+    configTemplate = configTemplate.replace(/domainSign: ".*"/, `domainSign: "${packageName}"`);
+    fs3.writeFileSync(path3.resolve(root, "src/config/index.ts"), configTemplate);
+  }
   const userAgent = process.env.npm_config_user_agent ?? "";
   const packageManager = /pnpm/.test(userAgent) ? "pnpm" : /yarn/.test(userAgent) ? "yarn" : "npm";
   fs3.writeFileSync(path3.resolve(root, "README.md"), generateReadme({

@@ -1,4 +1,8 @@
-## 说明
+## 简介
+
+用于团队内部快速初始化项目
+
+## 选项说明
 
 参考 `create-vue`，其中以下配置默认选择
 
@@ -11,3 +15,7 @@
     // - Add ESLint for code quality?
     // - Add Prettier for code formatting?
 ```
+
+##
+
+## todo

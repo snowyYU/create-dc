@@ -58,7 +58,7 @@ function emptyDir(dir) {
 async function init() {
   console.log(`\n${banner}\n`);
   const cwd = process.cwd();
-  console.log(`current working directory: ${cwd}`);
+  // console.log(`current working directory: ${cwd}`);
   // possible options:
   // --default
   // --typescript / --ts
@@ -76,7 +76,7 @@ async function init() {
     // all arguments are treated as booleans
     boolean: true,
   });
-  console.log(`arguments: ${JSON.stringify(argv, null, 2)}`);
+  // console.log(`arguments: ${JSON.stringify(argv, null, 2)}`);
   // if any of the feature flags is set, we would skip the feature prompts
   const isFeatureFlagsUsed = typeof (argv.default ?? argv.gw) === "boolean";
   // 可在启动命令行中带上 项目名参数
@@ -100,7 +100,7 @@ async function init() {
         {
           name: "projectName",
           type: targetDir ? null : "text",
-          message: "Project name:",
+          message: "项目名(Project name):",
           initial: defaultProjectName,
           onState: (state) => (targetDir = String(state.value).trim() || defaultProjectName),
         },
@@ -108,17 +108,16 @@ async function init() {
           name: "shouldOverwrite",
           type: () => (canSafelyOverwrite(targetDir) || forceOverwrite ? null : "confirm"),
           message: () => {
-            const dirForPrompt =
-              targetDir === "." ? "Current directory" : `Target directory "${targetDir}"`;
+            const dirForPrompt = targetDir === "." ? "当前目录" : `目标目录 "${targetDir}"`;
 
-            return `${dirForPrompt} is not empty. Remove existing files and continue?`;
+            return `${dirForPrompt} 非空。是否清空目录文件并继续？`;
           },
         },
         {
           name: "overwriteChecker",
           type: (prev, values) => {
             if (values.shouldOverwrite === false) {
-              throw new Error(red("✖") + " Operation cancelled");
+              throw new Error(red("✖") + " 操作已取消");
             }
             return null;
           },
@@ -203,7 +202,14 @@ async function init() {
 
   // Render base template
   render("base");
-
+  // Add configs.
+  if (needGw) {
+    render("config/needGw");
+    // 修改 config 文件 domainSign 属性
+    let configTemplate: string = fs.readFileSync(path.resolve(root, "src/config/index.ts"), "utf8");
+    configTemplate = configTemplate.replace(/domainSign: ".*"/, `domainSign: "${packageName}"`);
+    fs.writeFileSync(path.resolve(root, "src/config/index.ts"), configTemplate);
+  }
   // Instructions:
   // Supported package managers: pnpm > yarn > npm
   // Note: until <https://github.com/pnpm/pnpm/issues/3505> is resolved,
