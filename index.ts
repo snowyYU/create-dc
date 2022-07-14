@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*
  * @Author: jasper
  * @Date: 2022-07-08 15:48:40
