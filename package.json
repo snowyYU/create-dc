@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "bin": {
-    "create-cc": "outfile.cjs"
+    "create-dc": "outfile.cjs"
   },
   "scripts": {
     "build": "zx ./scripts/build.mjs"
