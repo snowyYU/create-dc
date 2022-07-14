@@ -8241,9 +8241,23 @@ var sfcTypeSupportDoc = [
 function generateReadme({ projectName, packageManager }) {
   let readme = `# ${projectName}
 
-This template should help get you started developing with Vue 3 in Vite.
+\u5728\u6B64\u5199\u4E0A\u51E0\u53E5\u7B80\u5355\u7684\u9879\u76EE\u63CF\u8FF0\u3002
 
-## Recommended IDE Setup
+## \u9879\u76EE\u76F8\u5173\u8D44\u6E90
+
+- [\u63A5\u53E3\u6587\u6863]()
+- [\u539F\u578B]()
+- [\u95E8\u6237\u5730\u5740]()
+
+## \u6280\u672F\u7EC4\u6210
+
+vue3 + typescript + vue-tsc + volar + vue-router + pinia
+
+## \u4F9D\u8D56\u8BF4\u660E
+
+  - \u4E3A\u9879\u76EE\u4E2D\u6240\u6D89\u53CA\u7684\u91CD\u8981\u4F9D\u8D56\u505A\u4E9B\u8BF4\u660E
+
+## \u63A8\u8350\u7684 IDE \u914D\u7F6E\uFF08\u5DF2\u52A0\u5165 .vscode\uFF09
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 ${sfcTypeSupportDoc}
