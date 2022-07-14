@@ -28,9 +28,23 @@ const sfcTypeSupportDoc = [
 export default function generateReadme({ projectName, packageManager }) {
   let readme = `# ${projectName}
 
-This template should help get you started developing with Vue 3 in Vite.
+在此写上几句简单的项目描述。
 
-## Recommended IDE Setup
+## 项目相关资源
+
+- [接口文档]()
+- [原型]()
+- [门户地址]()
+
+## 技术组成
+
+vue3 + typescript + vue-tsc + volar + vue-router + pinia
+
+## 依赖说明
+
+  - 为项目中所涉及的重要依赖做些说明
+
+## 推荐的 IDE 配置（已加入 .vscode）
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 ${sfcTypeSupportDoc}
