@@ -16,6 +16,12 @@
     // - Add Prettier for code formatting?
 ```
 
-##
+### 项目名(projectName)
+
+如果是需要对接管理平台的话，此参数即为 domainSign 的值，所以需要注意下
+
+### 是否需要对接管理平台(needGw)
+
+默认 选中
 
 ## todo
