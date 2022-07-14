@@ -7,6 +7,10 @@
   "bin": {
     "create-dc": "outfile.cjs"
   },
+  "files": [
+    "outfile.cjs",
+    "template"
+  ],
   "scripts": {
     "build": "zx ./scripts/build.mjs"
   },
