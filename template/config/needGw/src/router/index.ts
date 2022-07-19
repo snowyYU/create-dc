@@ -22,7 +22,7 @@ Object.keys(constantFiles).forEach((key) => {
 });
 
 const asyncFiles = import.meta.globEager("./permissionModules/*.ts");
-let permissionModules: Array<RouteRecordRaw> = [];
+let permissionModules: Array<RouteItemInLocal> = [];
 Object.keys(asyncFiles).forEach((key) => {
   if (key === "./index.ts") return;
   permissionModules = permissionModules.concat(asyncFiles[key].default);
@@ -43,7 +43,7 @@ const errorPageRoutes: Array<RouteRecordRaw> = [
 
 const constantRoutes: Array<RouteRecordRaw> = [...constantModules];
 
-const asyncRoutes: Array<RouteRecordRaw> = [...permissionModules];
+const asyncRoutes: Array<RouteItemInLocal> = [...permissionModules];
 const router = () => {
   // 此处会根据是否要对接管理系统，执行不同的逻辑
   const router = createRouter({

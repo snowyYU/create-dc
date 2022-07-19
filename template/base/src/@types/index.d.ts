@@ -4,4 +4,5 @@ interface RouteItemInLocal {
   redirect?: string;
   meta?: any;
   component?: any;
+  children?: any;
 }

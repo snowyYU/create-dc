@@ -27,6 +27,8 @@ declare namespace API {
     type: string;
     typeName: string;
     updateTime: string;
+    menuType: string; //菜单类型 1 普通菜单 2 内嵌菜单 3 外链菜单
+    menuTargetAddress: string;
     redirect?: string;
   }
   interface AppInfo {

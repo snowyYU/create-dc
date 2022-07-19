@@ -127,10 +127,6 @@ export default defineComponent({
       }
 
       if (activeMenu.value !== path) {
-        if (path.includes("/emergency-decision_making/index")) {
-          window.open(path);
-          return;
-        }
         router.push(path);
       }
     };
