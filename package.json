@@ -11,7 +11,9 @@
     "template"
   ],
   "scripts": {
-    "build": "zx ./scripts/build.mjs"
+    "build": "zx ./scripts/build.mjs",
+    "snapshot": "zx ./scripts/snapshot.mjs",
+    "prepublish": "zx ./scripts/prepublish.mjs"
   },
   "keywords": [],
   "author": "",

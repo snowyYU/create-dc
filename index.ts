@@ -73,7 +73,7 @@ async function init() {
   // --eslint-with-prettier (only support prettier through eslint for simplicity)
   // --force (for force overwriting)
   const argv = minimist(process.argv.slice(2), {
-    alias: { gateWay: ["gw", "needGw"] },
+    alias: { gateWay: ["gw", "needGw", "needgw"] },
     // all arguments are treated as booleans
     boolean: true,
   });
@@ -103,7 +103,7 @@ async function init() {
           type: targetDir ? null : "text",
           message: "项目名(Project name):",
           initial: defaultProjectName,
-          onState: (state) => (targetDir = String(state.value).trim() || defaultProjectName),
+          // onState: (state) => (targetDir = String(state.value).trim() || defaultProjectName),
         },
         {
           name: "shouldOverwrite",
