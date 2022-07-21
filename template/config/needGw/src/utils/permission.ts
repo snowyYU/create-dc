@@ -115,12 +115,14 @@ const getFinallyRoutes = (routeFromApi: API.RouteFromApi[]): RouteRecordRaw[] =>
     ElMessage.error("权限出错，请检查权限");
     return [];
   }
-  const redirectUrl = pathsFromApi[0].routePath;
+
+  const finallyRoutes = generateRoutes(pathsFromApi, asyncRoutes);
+  const redirectUrl = finallyRoutes[0].path;
   constantRoutes.push({
     path: "/",
     redirect: redirectUrl,
   });
-  const finallyRoutes = generateRoutes(pathsFromApi, asyncRoutes);
+
   const accessedRoutes = [...constantRoutes, ...finallyRoutes, ...errorPageRoutes];
   return accessedRoutes;
 };

@@ -14,14 +14,18 @@ import registerRouterGuards from "./routerGuards";
 // import Layout from '@/layout/index.vue'
 import { useAppStore } from "@/stores/app";
 
-const constantFiles = import.meta.globEager("./constantModules/*.ts");
+const constantFiles = import.meta.glob("./constantModules/*.ts", {
+  eager: true,
+});
 let constantModules: Array<RouteRecordRaw> = [];
 Object.keys(constantFiles).forEach((key) => {
   if (key === "./index.ts") return;
   constantModules = constantModules.concat(constantFiles[key].default);
 });
 
-const asyncFiles = import.meta.globEager("./permissionModules/*.ts");
+const asyncFiles = import.meta.glob("./permissionModules/*.ts", {
+  eager: true,
+});
 let permissionModules: Array<RouteItemInLocal> = [];
 Object.keys(asyncFiles).forEach((key) => {
   if (key === "./index.ts") return;
