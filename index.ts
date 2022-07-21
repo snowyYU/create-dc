@@ -9,8 +9,8 @@
  *
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved.
  */
-import * as fs from "fs";
-import * as path from "path";
+import * as fs from "node:fs";
+import * as path from "node:path";
 
 import { cwd } from "process";
 import minimist from "minimist";
