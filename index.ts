@@ -103,7 +103,7 @@ async function init() {
           type: targetDir ? null : "text",
           message: "项目名(Project name):",
           initial: defaultProjectName,
-          // onState: (state) => (targetDir = String(state.value).trim() || defaultProjectName),
+          onState: (state) => (targetDir = String(state.value).trim() || defaultProjectName),
         },
         {
           name: "shouldOverwrite",
@@ -178,7 +178,8 @@ async function init() {
     shouldOverwrite = argv.force,
     needGw = argv.gw,
   } = result;
-
+  console.log("cwd", cwd);
+  console.log("targetDir", targetDir);
   const root = path.join(cwd, targetDir);
   // 项目目录的创建逻辑
   if (fs.existsSync(root) && shouldOverwrite) {
