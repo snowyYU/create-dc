@@ -1,3 +1,12 @@
+/*
+ * @Author: jasper
+ * @Date: 2022-07-13 21:45:48
+ * @LastEditors: jasper
+ * @LastEditTime: 2022-07-22 09:19:59
+ * @FilePath: /create-dc/template/config/needGw/src/apis/typings.d.ts
+ * @Description:
+ *
+ */
 declare namespace API {
   interface CommonResponse<T = boolean> {
     code: string;
@@ -27,6 +36,8 @@ declare namespace API {
     type: string;
     typeName: string;
     updateTime: string;
+    menuType: string; //菜单类型 1 普通菜单 2 内嵌菜单 3 外链菜单
+    menuTargetAddress: string;
     redirect?: string;
   }
   interface AppInfo {
