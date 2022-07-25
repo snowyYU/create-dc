@@ -25,7 +25,8 @@ export const useAppStore = defineStore({
     language: "cn",
     size: getSize() || "default",
     token: "",
-    
+    userInfo: { name: "用户1" },
+    appInfo: { name: "系统名称" },
   }),
   getters: {
     // doubleCount: (state) => state.counter * 2,
@@ -60,7 +61,6 @@ export const useAppStore = defineStore({
       this.size = size;
       setSize(this.size);
     },
-    
   },
   persist: {
     enabled: true,

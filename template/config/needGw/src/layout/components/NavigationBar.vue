@@ -74,9 +74,9 @@ const routes = computed(() => {
   });
 });
 const logout = () => {
-  // appStore[AppActionTypes.LOGIN_OUT]().then(() => {
-  //   portal.loginout();
-  // });
+  appStore[AppActionTypes.LOGIN_OUT]().then(() => {
+    portal.loginout();
+  });
 };
 // 菜单选中
 const handleMenuSelect = (index: string) => {
