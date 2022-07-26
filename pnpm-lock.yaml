@@ -25,7 +25,7 @@ importers:
     devDependencies:
       '@types/node': 18.0.3
 
-  template/base:
+  playground/default:
     specifiers:
       '@commitlint/cli': ^17.0.3
       '@commitlint/config-conventional': ^17.0.3
@@ -73,7 +73,189 @@ importers:
     dependencies:
       '@element-plus/icons-vue': 2.0.6_vue@3.2.37
       axios: 0.27.2
-      dumpling-plus: 0.2.23
+      dumpling-plus: 0.2.24
+      element-plus: 2.2.9_vue@3.2.37
+      js-cookie: 3.0.1
+      normalize.css: 8.0.1
+      nprogress: 0.2.0
+      path-browserify: 1.0.1
+      pinia: 2.0.16_j6bzmzd4ujpabbp5objtwxyjp4
+      pinia-plugin-persist: 1.0.0_pinia@2.0.16+vue@3.2.37
+      screenfull: 6.0.2
+      vue: 3.2.37
+      vue-router: 4.1.2_vue@3.2.37
+    devDependencies:
+      '@commitlint/cli': 17.0.3
+      '@commitlint/config-conventional': 17.0.3
+      '@rushstack/eslint-patch': 1.1.4
+      '@types/js-cookie': 3.0.2
+      '@types/jsdom': 16.2.15
+      '@types/node': 18.0.6
+      '@types/nprogress': 0.2.0
+      '@types/path-browserify': 1.0.0
+      '@vitejs/plugin-vue': 3.0.1_vite@3.0.2+vue@3.2.37
+      '@vitejs/plugin-vue-jsx': 2.0.0_vite@3.0.2+vue@3.2.37
+      '@vue/eslint-config-prettier': 7.0.0_vvfpqh5kol6rhqy7beehv5uezq
+      '@vue/eslint-config-typescript': 11.0.0_usemwu2orllh6tzptz2hsp6y3e
+      '@vue/test-utils': 2.0.2_vue@3.2.37
+      '@vue/tsconfig': 0.1.3_@types+node@18.0.6
+      cypress: 10.3.1
+      cz-conventional-changelog: 3.3.0
+      eslint: 8.20.0
+      eslint-plugin-cypress: 2.12.1_eslint@8.20.0
+      eslint-plugin-vue: 9.2.0_eslint@8.20.0
+      husky: 8.0.1
+      jsdom: 20.0.0
+      lint-staged: 13.0.3
+      prettier: 2.7.1
+      sass: 1.53.0
+      start-server-and-test: 1.14.0
+      typescript: 4.7.4
+      vite: 3.0.2_sass@1.53.0
+      vite-plugin-html: 3.2.0_vite@3.0.2
+      vitest: 0.18.1_jsdom@20.0.0+sass@1.53.0
+      vue-tsc: 0.38.9_typescript@4.7.4
+
+  playground/needgw:
+    specifiers:
+      '@commitlint/cli': ^17.0.3
+      '@commitlint/config-conventional': ^17.0.3
+      '@element-plus/icons-vue': ^2.0.6
+      '@rushstack/eslint-patch': ^1.1.4
+      '@types/js-cookie': ^3.0.2
+      '@types/jsdom': ^16.2.15
+      '@types/node': ^18.0.6
+      '@types/nprogress': ^0.2.0
+      '@types/path-browserify': ^1.0.0
+      '@vitejs/plugin-vue': ^3.0.1
+      '@vitejs/plugin-vue-jsx': ^2.0.0
+      '@vue/eslint-config-prettier': ^7.0.0
+      '@vue/eslint-config-typescript': ^11.0.0
+      '@vue/test-utils': ^2.0.2
+      '@vue/tsconfig': ^0.1.3
+      axios: ^0.27.2
+      cypress: ^10.3.1
+      cz-conventional-changelog: ^3.3.0
+      dumpling-plus: ^0.2.23
+      element-plus: ^2.2.9
+      eslint: ^8.20.0
+      eslint-plugin-cypress: ^2.12.1
+      eslint-plugin-vue: ^9.2.0
+      husky: ^8.0.1
+      js-cookie: ^3.0.1
+      jsdom: ^20.0.0
+      lint-staged: ^13.0.3
+      normalize.css: ^8.0.1
+      nprogress: ^0.2.0
+      path-browserify: ^1.0.1
+      pinia: ^2.0.16
+      pinia-plugin-persist: ^1.0.0
+      prettier: ^2.7.1
+      sass: ^1.53.0
+      screenfull: ^6.0.2
+      start-server-and-test: ^1.14.0
+      typescript: ~4.7.4
+      vite: ^3.0.2
+      vite-plugin-html: ^3.2.0
+      vitest: ^0.18.1
+      vue: ^3.2.37
+      vue-router: ^4.1.2
+      vue-tsc: ^0.38.9
+    dependencies:
+      '@element-plus/icons-vue': 2.0.6_vue@3.2.37
+      axios: 0.27.2
+      dumpling-plus: 0.2.24
+      element-plus: 2.2.9_vue@3.2.37
+      js-cookie: 3.0.1
+      normalize.css: 8.0.1
+      nprogress: 0.2.0
+      path-browserify: 1.0.1
+      pinia: 2.0.16_j6bzmzd4ujpabbp5objtwxyjp4
+      pinia-plugin-persist: 1.0.0_pinia@2.0.16+vue@3.2.37
+      screenfull: 6.0.2
+      vue: 3.2.37
+      vue-router: 4.1.2_vue@3.2.37
+    devDependencies:
+      '@commitlint/cli': 17.0.3
+      '@commitlint/config-conventional': 17.0.3
+      '@rushstack/eslint-patch': 1.1.4
+      '@types/js-cookie': 3.0.2
+      '@types/jsdom': 16.2.15
+      '@types/node': 18.0.6
+      '@types/nprogress': 0.2.0
+      '@types/path-browserify': 1.0.0
+      '@vitejs/plugin-vue': 3.0.1_vite@3.0.2+vue@3.2.37
+      '@vitejs/plugin-vue-jsx': 2.0.0_vite@3.0.2+vue@3.2.37
+      '@vue/eslint-config-prettier': 7.0.0_vvfpqh5kol6rhqy7beehv5uezq
+      '@vue/eslint-config-typescript': 11.0.0_usemwu2orllh6tzptz2hsp6y3e
+      '@vue/test-utils': 2.0.2_vue@3.2.37
+      '@vue/tsconfig': 0.1.3_@types+node@18.0.6
+      cypress: 10.3.1
+      cz-conventional-changelog: 3.3.0
+      eslint: 8.20.0
+      eslint-plugin-cypress: 2.12.1_eslint@8.20.0
+      eslint-plugin-vue: 9.2.0_eslint@8.20.0
+      husky: 8.0.1
+      jsdom: 20.0.0
+      lint-staged: 13.0.3
+      prettier: 2.7.1
+      sass: 1.53.0
+      start-server-and-test: 1.14.0
+      typescript: 4.7.4
+      vite: 3.0.2_sass@1.53.0
+      vite-plugin-html: 3.2.0_vite@3.0.2
+      vitest: 0.18.1_jsdom@20.0.0+sass@1.53.0
+      vue-tsc: 0.38.9_typescript@4.7.4
+
+  template/base:
+    specifiers:
+      '@commitlint/cli': ^17.0.3
+      '@commitlint/config-conventional': ^17.0.3
+      '@element-plus/icons-vue': ^2.0.6
+      '@rushstack/eslint-patch': ^1.1.4
+      '@types/js-cookie': ^3.0.2
+      '@types/jsdom': ^16.2.15
+      '@types/node': ^18.0.6
+      '@types/nprogress': ^0.2.0
+      '@types/path-browserify': ^1.0.0
+      '@vitejs/plugin-vue': ^3.0.1
+      '@vitejs/plugin-vue-jsx': ^2.0.0
+      '@vue/eslint-config-prettier': ^7.0.0
+      '@vue/eslint-config-typescript': ^11.0.0
+      '@vue/test-utils': ^2.0.2
+      '@vue/tsconfig': ^0.1.3
+      axios: ^0.27.2
+      cypress: ^10.3.1
+      cz-conventional-changelog: ^3.3.0
+      dumpling-plus: ^0.2.24
+      element-plus: ^2.2.9
+      eslint: ^8.20.0
+      eslint-plugin-cypress: ^2.12.1
+      eslint-plugin-vue: ^9.2.0
+      husky: ^8.0.1
+      js-cookie: ^3.0.1
+      jsdom: ^20.0.0
+      lint-staged: ^13.0.3
+      normalize.css: ^8.0.1
+      nprogress: ^0.2.0
+      path-browserify: ^1.0.1
+      pinia: ^2.0.16
+      pinia-plugin-persist: ^1.0.0
+      prettier: ^2.7.1
+      sass: ^1.53.0
+      screenfull: ^6.0.2
+      start-server-and-test: ^1.14.0
+      typescript: ~4.7.4
+      vite: ^3.0.2
+      vite-plugin-html: ^3.2.0
+      vitest: ^0.18.1
+      vue: ^3.2.37
+      vue-router: ^4.1.2
+      vue-tsc: ^0.38.9
+    dependencies:
+      '@element-plus/icons-vue': 2.0.6_vue@3.2.37
+      axios: 0.27.2
+      dumpling-plus: 0.2.24
       element-plus: 2.2.9_vue@3.2.37
       js-cookie: 3.0.1
       normalize.css: 8.0.1
@@ -1262,7 +1444,6 @@ packages:
         optional: true
     dependencies:
       '@types/node': 18.0.3
-    dev: false
 
   /@vue/tsconfig/0.1.3_@types+node@18.0.6:
     resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
@@ -1517,7 +1698,7 @@ packages:
   /axios/0.21.4_debug@4.3.2:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
     dependencies:
-      follow-redirects: 1.15.1
+      follow-redirects: 1.15.1_debug@4.3.2
     transitivePeerDependencies:
       - debug
     dev: true
@@ -2294,8 +2475,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /dumpling-plus/0.2.23:
-    resolution: {integrity: sha512-ggRdhXiyAKwkksP/lQNdD2hIGBQFKgn6qmEsuG/uSvKVTt1AtIOtOYqt8RfitnQpxkkV7mpsOM45ZH91ZLwp8A==}
+  /dumpling-plus/0.2.24:
+    resolution: {integrity: sha512-TcNubxfRQIedBMXNsmL01+ZGaEoob+ayiJVMt/pB6EDYu6780/vXXB1A6sjbyLOPE2Yzj1NAngIblaSaZ+7mSA==}
     dependencies:
       '@element-plus/icons-vue': 2.0.6_vue@3.2.37
       core-js: 3.23.5
@@ -3266,6 +3447,19 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: false
+
+  /follow-redirects/1.15.1_debug@4.3.2:
+    resolution: {integrity: sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.2
+    dev: true
 
   /forever-agent/0.6.1:
     resolution: {integrity: sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw==}
