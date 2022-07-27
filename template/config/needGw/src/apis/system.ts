@@ -20,8 +20,7 @@ export function queryDoorInfo() {
 }
 
 // 获取当前应用的相关信息
-export const queryAppInfoApiUrl =
-  "/system/system/v1/tenant/app/queryCurrentApp";
+export const queryAppInfoApiUrl = "/system/system/v1/tenant/app/queryCurrentApp";
 export function queryAppInfo() {
   return request.request<any, API.CommonResponse<API.AppInfo>>({
     url: queryAppInfoApiUrl,
@@ -30,8 +29,7 @@ export function queryAppInfo() {
 }
 
 // 获取用户基本信息以及校验
-export const queryUserIdentityInfoApiUrl =
-  "/system/user/v2/user/getUserInfoByToken";
+export const queryUserIdentityInfoApiUrl = "/system/user/v2/user/getUserInfoByToken";
 export function queryUserIdentityInfo() {
   return request.request<any, API.CommonResponse<API.UserInfo>>({
     url: queryUserIdentityInfoApiUrl,
@@ -43,8 +41,7 @@ export function queryUserIdentityInfo() {
  * @param data
  * @returns {AxiosPromise}
  */
-export const getDoorResourcesTreeBySystemApiUrl =
-  "/system/user/v2/resource/queryRootMenu";
+export const getDoorResourcesTreeBySystemApiUrl = "/system/user/v2/resource/queryRootMenu";
 
 export function getDoorResourcesTreeBySystem() {
   return request.request<any, API.CommonResponse<API.RouteFromApi[]>>({
@@ -53,9 +50,8 @@ export function getDoorResourcesTreeBySystem() {
     data: {},
   });
 }
-
 // 退出接口
-export const loginoutApiUrl = "/sso/auth/logout";
+export const loginoutApiUrl = "/system/auth/logout";
 export function loginout() {
   return request.request<any, API.CommonResponse<API.AppInfo>>({
     url: loginoutApiUrl,
