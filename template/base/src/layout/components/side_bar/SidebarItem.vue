@@ -25,7 +25,7 @@
           :index="resolvePath(theOnlyOneChild.path)"
           :class="{ 'submenu-title-noDropdown': isFirstLevel }"
         >
-          <svg
+          <!-- <svg
             v-if="theOnlyOneChild.meta.icon"
             class="icon"
             aria-hidden="true"
@@ -33,6 +33,11 @@
           >
             <use :xlink:href="theOnlyOneChild.meta.icon" />
           </svg>
+          <Share v-else style="width: 17px; height: 17px; margin-right: 8px" /> -->
+          <SvgIcon
+            v-if="theOnlyOneChild.meta && theOnlyOneChild.meta.icon"
+            :name="theOnlyOneChild.meta.icon"
+          ></SvgIcon>
           <Share v-else style="width: 17px; height: 17px; margin-right: 8px" />
         </el-menu-item>
       </el-tooltip>
@@ -41,21 +46,31 @@
         :index="resolvePath(theOnlyOneChild.path)"
         :class="{ 'submenu-title-noDropdown': isFirstLevel }"
       >
+        <!-- 这里可以加上 svg -->
+        <SvgIcon
+          v-if="item.meta && item.meta.icon"
+          :name="item.meta.icon"
+          class="menu-icon"
+        ></SvgIcon>
         <span>{{ theOnlyOneChild.meta.title }}</span>
       </el-menu-item>
     </SidebarItemLink>
     <el-sub-menu v-else :index="resolvePath(item.path)">
       <!-- popper-append-to-body -->
       <template #title>
-        <svg
+        <!-- <svg
           v-if="item.meta && item.meta.icon"
           class="icon"
           aria-hidden="true"
           font-size="16px"
         >
           <use :xlink:href="item.meta.icon" />
-        </svg>
-        <!-- <Share v-else style="width: 17px; height: 17px; margin-right: 8px" /> -->
+        </svg> -->
+
+        <SvgIcon
+          v-if="item.meta && item.meta.icon"
+          :name="item.meta.icon"
+        ></SvgIcon>
         <span v-if="item.meta && item.meta.title">{{ item.meta.title }}</span>
       </template>
       <sidebar-item
@@ -78,6 +93,7 @@ import { computed, type PropType } from "vue";
 import type { RouteRecordRaw } from "vue-router";
 import { isExternal } from "@/utils/validate";
 import SidebarItemLink from "./SidebarItemLink.vue";
+import SvgIcon from "@/components/SvgIcon/index.vue";
 const props = defineProps({
   item: {
     type: Object as PropType<RouteRecordRaw>,
@@ -225,7 +241,11 @@ const resolvePath = (routePath: string) => {
 
 <style lang="scss" scoped>
 svg {
-  margin-right: 16px;
+  margin-right: 4px;
+}
+
+.menu-icon {
+  width: 1em;
 }
 
 .simple-mode {

@@ -2,8 +2,8 @@
  * @Author: jasper
  * @Date: 2022-06-20 10:58:45
  * @LastEditors: jasper
- * @LastEditTime: 2022-07-01 09:29:44
- * @FilePath: /vite-vue3-pc-template/vite.config.ts
+ * @LastEditTime: 2022-08-02 17:40:51
+ * @FilePath: /create-dc/template/base/vite.config.ts
  * @Description:
  *
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved.
@@ -14,12 +14,17 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { createHtmlPlugin } from "vite-plugin-html";
+import svgLoader from "vite-svg-loader";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "./",
   plugins: [
     vue(),
     vueJsx(),
+    svgLoader({
+      defaultImport: "component", // or 'raw' or 'url'
+    }),
+
     createHtmlPlugin({
       minify: true,
       entry: "/src/main.ts",
@@ -56,7 +61,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     assetsDir: "static",
   },
 });

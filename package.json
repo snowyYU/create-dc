@@ -1,7 +1,7 @@
 {
   "name": "create-dc",
   "version": "0.1.7",
-  "description": "",
+  "description": "cli",
   "type": "module",
   "bin": {
     "create-dc": "outfile.cjs"

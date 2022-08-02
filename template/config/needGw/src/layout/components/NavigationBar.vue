@@ -2,31 +2,17 @@
   <div class="navbar">
     <div class="title">{{ appStore.appInfo.name }}</div>
     <div class="center-menu" v-if="config.navMenuEnable">
-      <el-menu
-        :default-active="activeModule"
-        mode="horizontal"
-        @select="handleMenuSelect"
-      >
-        <el-menu-item
-          :index="route.path"
-          v-for="route in routes"
-          :key="route.path"
-        >
+      <el-menu :default-active="activeModule" mode="horizontal" @select="handleMenuSelect">
+        <el-menu-item :index="route.path" v-for="route in routes" :key="route.path">
           {{ route.meta?.title }}
         </el-menu-item>
       </el-menu>
     </div>
     <div class="right-menu">
       <screen-full class="right-menu-item hover-effect" />
-      <el-dropdown
-        class="avatar-container right-menu-item hover-effect"
-        trigger="click"
-      >
+      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
-          <img
-            src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"
-            class="user-avatar"
-          />
+          <img src="../../assets/avatar.gif" class="user-avatar" />
           <span class="user-nickname">{{ appStore.userInfo.name }}</span>
         </div>
         <template #dropdown>

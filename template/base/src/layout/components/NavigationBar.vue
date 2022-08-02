@@ -23,10 +23,7 @@
         trigger="click"
       >
         <div class="avatar-wrapper">
-          <img
-            src="https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif"
-            class="user-avatar"
-          />
+          <img src="../../assets/avatar.gif" class="user-avatar" />
           <span class="user-nickname">{{ appStore.userInfo.name }}</span>
         </div>
         <template #dropdown>

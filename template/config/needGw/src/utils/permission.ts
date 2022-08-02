@@ -86,7 +86,11 @@ const generateRoutes = (
       routeItem.path = targetRouteItemInLocal?.path ? targetRouteItemInLocal.path : "";
       routeItem.name = targetRouteItemInLocal?.name;
       routeItem.component = targetRouteItemInLocal?.component;
-      routeItem.meta = { ...targetRouteItemInLocal?.meta, ...routeFromApi };
+      routeItem.meta = {
+        ...targetRouteItemInLocal?.meta,
+        ...routeFromApi,
+        icon: routeFromApi.icon || targetRouteItemInLocal?.meta?.icon,
+      };
       if (routeFromApi.children) {
         if (
           !routeFromApi.redirect &&

@@ -1,3 +1,12 @@
+/*
+ * @Author: jasper
+ * @Date: 2022-06-20 10:58:45
+ * @LastEditors: jasper
+ * @LastEditTime: 2022-08-02 17:22:25
+ * @FilePath: /create-dc/template/base/src/apis/typings.d.ts
+ * @Description:
+ *
+ */
 declare namespace API {
   interface CommonResponse<T = boolean> {
     code: string;
@@ -30,6 +39,7 @@ declare namespace API {
     menuType: string; //菜单类型 1 普通菜单 2 内嵌菜单 3 外链菜单
     menuTargetAddress: string;
     redirect?: string;
+    icon?: string;
   }
   interface AppInfo {
     appId: number;

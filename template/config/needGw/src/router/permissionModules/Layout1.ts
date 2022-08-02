@@ -2,8 +2,8 @@
  * @Author: jasper
  * @Date: 2022-04-07 19:23:01
  * @LastEditors: jasper
- * @LastEditTime: 2022-06-06 11:24:02
- * @FilePath: /vite-vue3-pc-template/src/router/permissionModules/Layout1.ts
+ * @LastEditTime: 2022-08-02 17:33:52
+ * @FilePath: /create-dc/template/config/needGw/src/router/permissionModules/Layout1.ts
  * @Description:
  *
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved.
@@ -47,7 +47,7 @@ const EventManageRouter: Array<RouteRecordRaw> = [
     path: "/layout1/menu2/menu2-2",
     name: "/layout1/menu2/menu2-2",
     component: () => import("@/views/FirstLayout.vue"),
-    meta: { title: "菜单二二", icon: "" },
+    meta: { title: "菜单二二", icon: "custom-link" },
   },
 ];
 

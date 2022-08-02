@@ -2,8 +2,8 @@
  * @Author: jasper
  * @Date: 2022-04-01 09:06:54
  * @LastEditors: jasper
- * @LastEditTime: 2022-04-07 21:51:35
- * @FilePath: /vite-vue3-pc-template/src/components/hamburger/index.vue
+ * @LastEditTime: 2022-08-02 17:43:23
+ * @FilePath: /create-dc/template/base/src/components/hamburger/index.vue
  * @Description: 
  * 
  * Copyright (c) 2022 by 公卫区位大数据前端组, All Rights Reserved. 
@@ -54,6 +54,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .icon {
   vertical-align: middle;
+  width: 24px;
 }
 
 .is-active {
