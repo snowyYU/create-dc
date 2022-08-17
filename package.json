@@ -1,6 +1,6 @@
 {
   "name": "create-dc",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "cli",
   "type": "module",
   "bin": {
