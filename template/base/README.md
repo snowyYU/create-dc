@@ -8,6 +8,11 @@ This template should help get you started developing with Vue 3 in Vite.
 - [原型]()
 - [门户地址]()
 
+## 分支描述及构建
+
+- main 主分支，只用作版本发布，封存和标签管理
+- dev 主开发分支，开发环境 Jenkins 使用此分支，构建命令 `pnpm build`
+
 ## 采用技术
 
 ## 备注
@@ -44,7 +49,6 @@ pnpm install
 ```sh
 pnpm dev
 ```
-
 
 ### Type-Check, Compile and Minify for Production
 
