@@ -17,7 +17,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
     "axios": "^0.27.2",
-    "dumpling-plus": "^0.2.24",
+    "dumpling-plus": "^0.3.0",
     "element-plus": "^2.2.9",
     "js-cookie": "^3.0.1",
     "normalize.css": "^8.0.1",
