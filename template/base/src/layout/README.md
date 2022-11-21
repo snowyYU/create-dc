@@ -33,3 +33,15 @@ outsideLink: `${window.location.origin}/aies-screen/?token=${getTokenByURL()}#/`
 
 考虑到布局组建的组合问题，路由树必须有完整层级，渲染过程中会检查各自的 children 属性，如数组中只有一个成员，只会渲染成单层级菜单（不会有展开功能，文字取 children 中成员 meta.title）
 不过有时需要显示层级关系，所以有个此属性
+
+### activeMenu
+
+> 值为一个类似路由字符串的结构，如
+
+```javascript
+meta: {
+  activeMenu: "/home";
+}
+```
+
+效果为点击一个菜单，会激活此字段值对应的路由
